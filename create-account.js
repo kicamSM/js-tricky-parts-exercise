@@ -26,9 +26,6 @@ function createAccount(AcctPin, balance = 0) {
             else return "Withdrawal amount exceeds account balance. Transaction cancelled.";
         },
         "changePin": function(pin, newPin){
-            console.log("AcctPin:", AcctPin)
-            console.log("pin:", pin)
-            console.log("pin === AcctPin", pin === AcctPin)
             if(pin === AcctPin) {
                 AcctPin = newPin; 
                 return "PIN successfully changed!"
@@ -39,8 +36,6 @@ function createAccount(AcctPin, balance = 0) {
         }
     }
 }
-
-createAccount()
 
 let account = createAccount("1234", 0);
 console.log("account:", account)

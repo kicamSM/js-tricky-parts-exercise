@@ -11,26 +11,21 @@ function guessingGame() {
     let count = 1;
     let won = false;
 
-return function game(guess){
-    console.log("randumNum:", randNum)
-    if(won === true) {
-        return "The game is over, you already won!"
-    } else if(guess > randNum) {
-        count++;
-        console.log("else if guess:", guess )
-        console.log("else if randomNum:", randNum)
-        return `${guess} is too high!`;
-    } else if(randNum > guess){
-        count++;
-        return `${guess} is too low!`;
-    } else {
-        won = true 
-        return `You win! You found ${randNum} in ${count} guesses.`;
+    return function game(guess){
+        if(won === true) {
+            return "The game is over, you already won!"
+        } else if(guess > randNum) {
+            count++;
+            return `${guess} is too high!`;
+        } else if(randNum > guess){
+            count++;
+            return `${guess} is too low!`;
+        } else {
+            won = true;
+            return `You win! You found ${randNum} in ${count} guesses.`;
+        }
     }
 }
-
-}
-
 
 // let game = guessingGame();
 // let result1 = game(50); // "50 is too low!"
@@ -42,17 +37,6 @@ return function game(guess){
 // console.log("result2:", result2)
 // console.log("result3:", result3)
 // console.log("result4:", result4)
-
-let game = guessingGame();
-let result1 = game(1); // "50 is too low!"
-let result2 = game(2); // "90 is too high!"
-let result3 = game(3); // "You win! You found 70 in 3 guesses."
-let result4 = game(4); // "The game is over, you already won!"
-
-console.log("result1:", result1)
-console.log("result2:", result2)
-console.log("result3:", result3)
-console.log("result4:", result4)
 
 module.exports = { guessingGame };
 
